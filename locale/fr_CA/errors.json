@@ -1,0 +1,7 @@
+{
+  "errors" : {
+    "not_empty" : "Ce champs ne doit pas être vide.",
+    "pwd_same" : "Les mots de passe doivent être identique.",
+    "password" : "Le mot de passe ne convient pas aux exigences. 8 charactères, 1 minuscule, 1 majuscule, 1 chiffre, 1 charactère spécial."
+  }
+}
