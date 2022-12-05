@@ -56,14 +56,18 @@ class SessionController extends \Zephyrus\Security\Controller
     public function initializeRoutes()
     {
         $this->post("/session", "insertSessions");
+        $this->get("/session/{id}", "getSessions");
     }
 
     public function insertSessions()
     {
-        $test = $this->request->getParameters();
-        echo (json_encode($test));
-        SessionService::insertSession($test);
-        die();
-        //SessionService::insertSession();
+        $params = $this->request->getParameters();
+        echo (json_encode($params));
+        SessionService::insertSession($params);
+    }
+    public function getSessions(int $id)
+    {
+        $sessions = SessionService::findSessions($id);
+        echo json_encode($sessions);
     }
 }
