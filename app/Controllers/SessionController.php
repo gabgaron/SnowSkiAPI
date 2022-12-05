@@ -55,7 +55,7 @@ class SessionController extends \Zephyrus\Security\Controller
      */
     public function initializeRoutes()
     {
-        $this->post("/sessions", "insertSessions");
+        $this->post("/session", "insertSessions");
     }
 
     public function insertSessions()

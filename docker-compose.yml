@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: "./docker/services/php81/Dockerfile"
-    container_name: "framework_webserver"
+    container_name: "api_webserver"
     restart: 'always'
     ports:
       - "80:80"
@@ -22,7 +22,7 @@ services:
   database:
     build:
       context: "./docker/services/postgres"
-    container_name: 'framework_database'
+    container_name: 'api_database'
     volumes:
       - ./sql:/docker-entrypoint-initdb.d/sql
       - ./sql/database.sql:/docker-entrypoint-initdb.d/1-database.sql
