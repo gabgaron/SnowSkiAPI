@@ -48,6 +48,6 @@ CREATE TABLE descent
     id_session INTEGER NOT NULL,
     descent_number INTEGER NOT NULL,
     duration INTEGER NOT NULL,
-    highest_altitude DECIMAL NOT NULL,
-    lowest_altitude DECIMAL NOT NULL
+    starting_altitude DECIMAL NOT NULL,
+    finished_altitude DECIMAL NOT NULL
 );

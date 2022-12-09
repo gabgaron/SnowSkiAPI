@@ -8,14 +8,14 @@ class DescentBroker extends Broker
 {
     public function insertDescent(stdClass $descent, $sessionId)
     {
-        $sql = "INSERT INTO descent (id_session, descent_number, duration, highest_altitude, lowest_altitude)
+        $sql = "INSERT INTO descent (id_session, descent_number, duration, starting_altitude, finished_altitude)
             VALUES (?, ?, ?, ?, ?)";
         $this->query($sql, [
             $sessionId,
             $descent->descent_number,
             $descent->duration,
-            $descent->highest_altitude,
-            $descent->lowest_altitude
+            $descent->starting_altitude,
+            $descent->finished_altitude
         ]);
     }
 

@@ -70,7 +70,7 @@ class SessionController extends \Zephyrus\Security\Controller
     {
         $user = new stdClass();
         $sessions = SessionService::findSessions($id);
-        $user->id = $id;
+        $user->userID = $id;
         $user->sessions = $sessions;
         echo json_encode($user);
     }
