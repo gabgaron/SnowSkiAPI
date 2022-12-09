@@ -3,6 +3,7 @@
 namespace Controllers;
 
 use Models\Services\SessionService;
+use stdClass;
 
 class SessionController extends \Zephyrus\Security\Controller
 {
@@ -67,7 +68,10 @@ class SessionController extends \Zephyrus\Security\Controller
     }
     public function getSessions(int $id)
     {
+        $user = new stdClass();
         $sessions = SessionService::findSessions($id);
-        echo json_encode($sessions);
+        $user->id = $id;
+        $user->sessions = $sessions;
+        echo json_encode($user);
     }
 }
