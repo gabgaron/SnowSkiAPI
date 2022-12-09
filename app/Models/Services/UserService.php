@@ -35,6 +35,8 @@ class UserService
         $user = self::findUserByUsername($userInfo["username"]);
         if ($user == null || !Cryptography::verifyHashedPassword($userInfo["password"], $user->password))
             return null;
-        return $user;
+        $newUser = new StdClass();
+        $newUser->id = $user->id;
+        return $newUser;
     }
 }
